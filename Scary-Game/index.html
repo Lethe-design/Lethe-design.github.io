@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scary Stroll — Park to Forest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="index">
+  <div class="overlay start" id="startOverlay">
+    <h1>Take a stroll?</h1>
+    <p class="sub">Click or tap to begin</p>
+    <button id="beginBtn">Begin Walk</button>
+  </div>
+
+  <main class="scene" id="scene">
+    <div class="narration" id="narration">
+      <p class="line" id="line">You step out into the evening — the park glows under lamp light and the forest waits at the edge.</p>
+
+      <!-- choices will be populated by script.js to enable multi-step gameplay -->
+      <div class="choices" id="choices" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <audio id="ambient" loop src="assets/sounds/ambient_loop.mp3"></audio>
+  <audio id="footsteps" loop src="assets/sounds/footsteps_loop.mp3"></audio>
+  <audio id="whisper" src="assets/sounds/whisper.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

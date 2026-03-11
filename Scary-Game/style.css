@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Creep";
+  src: local("Courier New"), local("monospace");
+}
+:root{
+  --bg-dark:#05060a; --accent:#0ff; --muted:#9aa0a6;
+}
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: Creep, monospace; background:#000; color:#e6f7ff}
+.scene{min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;
+  background-repeat:no-repeat; background-size:cover; background-position:center center; transition:background 1s ease;}
+/* different default backgrounds (will be overridden by JS) */
+body#index .scene{background-image:url("assets/images/park_mist.jpg")}
+body#good .scene{background-image:url("assets/images/good_end.jpg")}
+body#bad .scene{background-image:url("assets/images/bad_end.jpg")}
+
+.overlay.start{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;
+  background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)); gap:1rem;
+  z-index:20; color:var(--accent);
+}
+.overlay.start h1{font-size:2.2rem; margin:0; text-shadow:0 0 12px rgba(0,255,255,0.08)}
+.overlay .sub{color:var(--muted)}
+button{cursor:pointer; border:2px solid rgba(0,255,255,0.12); background:rgba(0,0,0,0.4); color:var(--accent);
+  padding:.6rem 1.2rem; border-radius:8px; font-weight:700}
+button.danger{border-color:#ff5a5a;color:#ff8a8a}
+.narration{max-width:720px; background:rgba(2,2,2,0.45); padding:1.2rem 1.4rem; border-radius:12px; border:1px solid rgba(0,255,255,0.06)}
+.choices{margin-top:1rem; display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap}
+.choice{min-width:180px}
+.end .content{max-width:720px; background:rgba(0,0,0,0.6); padding:1.4rem; border-radius:12px; border:1px solid rgba(255,255,255,0.04)}
+.end-img{width:100%; max-width:520px; margin-top:1rem; border-radius:10px; box-shadow: 0 10px 50px rgba(0,0,0,0.7)}
+/* bad ending flash */
+.flash {
+  animation: flash 0.12s linear 6;
+}
+@keyframes flash {
+  0%{filter:brightness(1)}
+  50%{filter:brightness(4) saturate(1.8) contrast(2)}
+  100%{filter:brightness(1)}
+}
+/* subtle glitch text */
+h2 { text-shadow: 0 0 6px rgba(0,255,255,0.06)}
+@media (max-width:600px){
+  .narration{padding:.9rem}
+  .overlay.start h1{font-size:1.5rem}
+}

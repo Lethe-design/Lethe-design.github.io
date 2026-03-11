@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bad Ending — Lost</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="bad">
+  <div class="overlay start" id="resumeOverlay">
+    <h1>Something is here</h1>
+    <p class="sub">Click to confront it</p>
+    <button id="resumeBtn">Play</button>
+  </div>
+
+  <main class="scene end" id="endScene">
+    <div class="content">
+      <h2>Bad Ending</h2>
+      <p>The forest swallowed the path, whispers rose, and something moved behind you. There was no coming back.</p>
+      <img src="assets/images/bad_end.jpg" alt="Creepy tree" class="end-img" />
+      <p><a href="index.html">Try again</a></p>
+    </div>
+  </main>
+
+  <audio id="jump" src="assets/sounds/jump_scare.mp3"></audio>
+  <audio id="badAmb" loop src="assets/sounds/ambient_creepy.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
