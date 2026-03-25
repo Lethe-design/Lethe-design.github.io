@@ -11,8 +11,6 @@
   }
 
   if(page === 'index'){
-    const startOverlay = document.getElementById('startOverlay');
-    const beginBtn = document.getElementById('beginBtn');
     const ambient = document.getElementById('ambient');
     const footsteps = document.getElementById('footsteps');
     const whisper = document.getElementById('whisper');
@@ -164,18 +162,16 @@
     }
 
     function startGame(){
-      startOverlay.style.display = 'none';
       tryPlay(ambient, 0.5);
       tryPlay(footsteps, 0.6);
       // show initial scene after tiny pause
       setTimeout(()=> showScene(0), 350);
     }
 
-    beginBtn.addEventListener('click', startGame);
-    startOverlay.addEventListener('click', (e)=>{ if(e.target === startOverlay) startGame(); });
-
     // initialize with randomized starting background
     setBackground(scenes[0].bg);
+    // immediately start playthrough when arriving from start page
+    startGame();
   }
 
   // good / bad pages unchanged but keep small resume behavior (existing code)

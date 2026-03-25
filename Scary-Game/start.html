@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Path of Possibility — Start</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="start">
+  <div class="overlay start" id="startOverlay">
+    <h1>Take a stroll?</h1>
+    <p class="sub">Click or tap to begin</p>
+    <button id="beginBtn">Begin Walk</button>
+  </div>
+
+  <script>
+    const beginBtn = document.getElementById('beginBtn');
+    beginBtn?.addEventListener('click', ()=> {
+      window.location.href = 'index.html';
+    });
+    document.getElementById('startOverlay')?.addEventListener('click', (e)=> {
+      if(e.target === e.currentTarget) window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
