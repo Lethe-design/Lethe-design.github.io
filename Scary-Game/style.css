@@ -11,8 +11,8 @@ html,body{height:100%; margin:0; font-family: Creep, monospace; background:#000;
   background-repeat:no-repeat; background-size:cover; background-position:center center; transition:background 1s ease;}
 /* different default backgrounds (will be overridden by JS) */
 body#index .scene{background-image:url("assets/images/park_mist.jpg")}
-body#good .scene{background-image:url("assets/images/good_end.jpg")}
-body#bad .scene{background-image:url("assets/images/bad_end.jpg")}
+body#good .scene{background-image:url("assets/images/good_end.jpeg")}
+body#bad .scene{background-image:url("assets/images/bad_end.jpeg")}
 
 .overlay.start{
   position:fixed; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column;
